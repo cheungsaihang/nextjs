@@ -1,6 +1,5 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod";
-import { NextRequest } from "next/server"
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -18,7 +17,7 @@ const contactUsSchema = z.object({
 
 type ContactUsSchema = z.infer<typeof contactUsSchema>;
 
-export default function ContactUs(request:NextRequest){
+export default function ContactUs(){
     const { 
         register, 
         handleSubmit, 
