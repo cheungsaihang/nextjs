@@ -14,7 +14,9 @@
     "@hookform/resolvers": "^3.3.2",
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
+    "cookies-next": "^4.0.0",
     "html-react-parser": "^4.2.2",
+    "jsonwebtoken": "^9.0.2",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
@@ -23,6 +25,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

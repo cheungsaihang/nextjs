@@ -1,21 +1,7 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-const contactUsSchema = z.object({
-    name: z.string().min(1, { message: "Name is required" }),
-    email: z.string().email(),
-    comment: z.string().min(1, { message: "Comment is required" }),
-}).refine((data) => data.name != "test",{
-    message: "Don't use test as name",
-    path:["name"]
-}).refine((data) => data.email != "text@gmail.com",{
-    message: "Invalid email format",
-    path:["email"]
-});
-
-type ContactUsSchema = z.infer<typeof contactUsSchema>;
+import { TContactUsSchema, contactUsSchema} from "./hooks";
 
 export default function ContactUs(){
     const { 
@@ -23,11 +9,11 @@ export default function ContactUs(){
         handleSubmit, 
         formState: { errors },
         reset
-    } = useForm<ContactUsSchema>({
+    } = useForm<TContactUsSchema>({
         resolver: zodResolver(contactUsSchema),
     });
 
-    const onSubmit = (data:ContactUsSchema) => {
+    const onSubmit = (data:TContactUsSchema) => {
         alert("Submit Success");
         reset();
         return false;

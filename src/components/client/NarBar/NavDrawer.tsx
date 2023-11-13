@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import NavAvatar from './NavAvatar';
 
 export default function NavDrawer({
     open,
@@ -37,7 +38,8 @@ export default function NavDrawer({
     return (
         <div className={`fixed inset-0 ${shadowStyle} z-50 overflow-hidden`} onClick={() => closeDrawer()}>
             <div className="bg-white p-3 absolute inset-y-0" style={style}>
-                <ul className="mt-10">
+                <ul className="mt-2">
+                    <li className="mb-12 border-b pb-1 text-slate-500"><NavAvatar /></li>
                     <li className="mb-4"><Link href="/article">Article</Link></li>
                     <li className="mb-4"><Link href="/contact-us">Contact Us</Link></li>
                 </ul>
